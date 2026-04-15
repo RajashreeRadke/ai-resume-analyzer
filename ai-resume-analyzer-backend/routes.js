@@ -1,9 +1,10 @@
 import express from "express"
-
-const router = express.Router()
+import multer from "multer";
 import {checkResume} from './controllers/resume-analyse.js'
-console.log("enter routes")
-router.route('/analyze').post(checkResume)
+const router = express.Router()
+const upload = multer({ dest: "uploads/" });
+
+router.post("/analyze", upload.single("resume"), checkResume);
 
 router.get('/analyze', (req, res) => {
     console.log('enter in to route')
