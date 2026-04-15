@@ -15,7 +15,7 @@ function ResumeAnalyzer() {
   const [result, setResult] = useState("");
 
   const analyzeResume = async () => {
-    const res = await fetch("http://localhost:5000/api/analyze", {
+    const res = await fetch("https://ai-resume-analyzer-diqm.onrender.com/api/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
